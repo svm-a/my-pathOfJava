@@ -1,12 +1,12 @@
 package org.example;
 import java.util.Scanner;
 
-class Example {
+class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-
-        System.out.printf("%d-%d-%d", (number + 1), (number + 2), (number + 3));
+        int number1 = scanner.nextInt();
+        int number2 = scanner.nextInt();
+        int number3 = scanner.nextInt();
+        System.out.println(Math.max(number1, Math.max(number2, number3)));
     }
-
 }
