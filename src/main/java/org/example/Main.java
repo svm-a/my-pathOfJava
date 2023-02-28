@@ -1,16 +1,25 @@
 package org.example;
-
 import java.util.Scanner;
 
-class A {
+
+class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int total = 0, counter = 0, item;
+        int counter = 0, total = 0;
+        String x;
+        boolean flag = false;
 
-        while ((item = scanner.nextInt()) != 0) {
+        for (x = scanner.nextLine(); !x.equals("СТОП"); x = scanner.nextLine()) {
+            if ((x.equals("ээээ") || x.equals("потом"))) {
+                counter--;
+            }
             counter++;
-            total += item;
+            if (x.equals("Куб")) {
+                flag = true;
+                total += counter;
+            }
+
         }
-        System.out.println((double) total/ counter);
+        System.out.println(flag? total : "NO");
     }
 }
