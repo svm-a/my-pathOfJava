@@ -1,36 +1,36 @@
 package org.example;
+import java.util.Arrays;
+import java.util.Scanner;
 
-import javax.sound.sampled.EnumControl;
-import java.sql.Array;
-import java.util.*;
 
-class Main {
+class HomeWork {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
 
-        int count = 0;
-        boolean flag = true;
-        int arraySize = scanner.nextInt();
-
-        int[] array = new int[arraySize];
-
+        int[][] array = new int[m][n];
+        int[][] result = new int[n][m];
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = scanner.nextInt();
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = sc.nextInt();
+            }
         }
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] == array[j] && j != i) {
-                    flag = false;
-                    break;
+            for (int j = 0; j < array[i].length; j++) {
+                result[j][m - i - 1] = array[i][j];
                 }
-            }
-            if (flag) {
-                System.out.println(array[i]);
-            }
-            flag = true;
         }
+
+        for (int i = 0; i < result.length; i ++) {
+            for (int j = 0; j < result[i].length; j ++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+
     }
 }
